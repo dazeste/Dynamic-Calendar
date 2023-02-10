@@ -65,10 +65,7 @@ header .icons span:last-child{
 .calendar .days{
  margin-bottom: 20px;
 }
-.calendar .days li{
-  margin-top: 30px;
-  cursor: pointer;
-}
+
 .calendar ul{
   display: flex;
   list-style: none;
@@ -76,9 +73,14 @@ header .icons span:last-child{
   text-align: center;
 }
 
-.calendar ul li{
+.calendar ul li{  
   position: relative;
   width: calc(100% / 7);
+}
+.calendar .days li{
+  z-index: 1;
+  margin-top: 30px;
+  cursor: pointer;
 }
 
 .calendar .days li::before{
