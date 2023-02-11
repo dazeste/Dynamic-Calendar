@@ -111,6 +111,7 @@ header .current-date{
   left:5%;
   max-width: 500px;
   padding: 0 20px;
+  z-index: 99;
 
 
 }
@@ -126,7 +127,7 @@ header .current-date{
   cursor: pointer;
   position: relative;
   /* border: 1px solid red; */
-  z-index: 99;
+  /* z-index: 99; */
 
 }
 .container .parent-tab {
