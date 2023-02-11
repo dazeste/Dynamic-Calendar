@@ -8,6 +8,7 @@
 }
 body{
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 0 10px;
   justify-content: center;
@@ -17,7 +18,7 @@ body{
 .wrapper{
   width: 450px;
   background: #fff;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   box-shadow: 0 15px 40px rgba(0,0,0,0.12);
 }
 .wrapper header{
@@ -39,7 +40,7 @@ header .icons span{
   line-height: 38px;
   font-size: 1.9rem;
   user-select: none;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 .icons span:last-child{
   margin-right: -10px;
@@ -92,7 +93,7 @@ header .current-date{
   height: 40px;
   width: 40px;
   z-index: -1;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   transform: translate(-50%, -50%);
 }
 .days li.active::before{
@@ -101,3 +102,70 @@ header .current-date{
 .days li:not(.active):hover::before{
   background: #f2f2f2;
 }
+.container{
+position:absolute;
+bottom: 5%;
+left:5%;
+max-width: 500px;
+padding: 0 20px;
+
+}
+/* label hr.line{
+  border: 1px solid white;
+} */
+.container .parent-tab label{
+  background-color: transparent;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  /* border: 1px solid red; */
+  z-index: 99;
+
+}
+.container .parent-tab {
+  margin-bottom: 8px;
+  box-shadow: 0px 0px 15px rgba(18, 83, 148, 0.18);
+}
+.container label span{
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  text-shadow: 0 -1px 1px rgb(18, 83, 148);
+}
+.container label .icon{
+  height: 30px;
+  width: 30px;
+  color: white;
+  display: block;
+ 
+}
+.container .parent-tab .content {
+ max-height: 0px;
+ overflow: hidden;
+ transition:  all 0.4s ease;
+}
+
+.parent-tab input:checked ~ .content{
+  max-height: 100vh;
+}
+
+.container .parent-tab .content p{
+  font-size: 16px;
+  padding: 15px 20px;
+}
+
+.container input{
+  display: none;
+}
+
+
+/* .notes{
+  display: flex;
+  width: 850px;
+  align-items: center;
+  padding:10px 0;
+  justify-content: space-between;
+} */

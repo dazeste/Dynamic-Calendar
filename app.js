@@ -15,8 +15,16 @@ const month = ["January", "February", "March", "April", "May", "June", "July",
 
 
 const renderCalendar = () => {
-  let lastDateofMonth = new Date(currentMonth, currentYear + 1, 0).getDate();//getting last date of month
+  let firstDayofMonth = new Date(currentMonth, currentYear, 1).getDate(),//getting first day of month
+  lastDateofMonth = new Date(currentMonth, currentYear + 1, 0).getDate(),//getting last date of month
+  lastDateofLastMonth = new Date(currentMonth, currentYear, 0).getDate();//getting last date of previous month
   let liTag = "";
+
+
+  for (let i = firstDayofMonth; i > 0; i--) {   
+    liTag += `<li>${lastDateofLastMonth - i + 1}</li>`;
+    
+  }
  
   //getting all month dates
   for (let i = 1; i <lastDateofMonth; i++){
@@ -33,5 +41,6 @@ prevNextIcon.forEach(icon => {
   icon.addEventListener("click", () =>{ //adding click event on boath icons
     //if clickef icon is previous icon than decrement current month by 1 else increment it by 1
     currentMonth = icon.id === "prev" ? currentMonth - 1 : currentMonth +1; 
+    renderCalendar();
   })
 });
